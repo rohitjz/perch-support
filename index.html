@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perch for macOS</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const theme = param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <style>
+    :root { color-scheme: light; --cp-bg: #f7f4ef; --cp-bg-elevated: #fcfbf8; --cp-surface: #ffffff; --cp-surface-soft: #f5f5f5; --cp-border: #dedede; --cp-border-strong: #919191; --cp-text: #242424; --cp-text-muted: #5c5c5c; --cp-text-soft: #6f6f6f; --cp-accent: #b11f4b; --cp-accent-hover: #9a1a41; --cp-accent-soft: rgba(177, 31, 75, 0.08); --cp-accent-fg: #ffffff; --cp-success: #16a34a; --cp-danger: #dc2626; --cp-warning: #f59e0b; --cp-link: #0078d4; --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12); --cp-overlay: rgba(255, 255, 255, 0.8); --cp-panel: rgba(255, 255, 255, 0.86); --cp-panel-strong: rgba(255, 255, 255, 0.96); --cp-sheen: rgba(255, 255, 255, 0.55); --cp-highlight: rgba(177, 31, 75, 0.12); }
+    html[data-theme="dark"] { color-scheme: dark; --cp-bg: #3d3b3a; --cp-bg-elevated: #343231; --cp-surface: #292929; --cp-surface-soft: #2e2e2e; --cp-border: #474747; --cp-border-strong: #5f5f5f; --cp-text: #dedede; --cp-text-muted: #919191; --cp-text-soft: #b0b0b0; --cp-accent: #fd8ea1; --cp-accent-hover: #fb7b91; --cp-accent-soft: rgba(253, 142, 161, 0.14); --cp-accent-fg: #1a1a1a; --cp-success: #4ade80; --cp-danger: #f87171; --cp-warning: #fbbf24; --cp-link: #4da6ff; --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32); --cp-overlay: rgba(41, 41, 41, 0.88); --cp-panel: rgba(41, 41, 41, 0.72); --cp-panel-strong: rgba(41, 41, 41, 0.96); --cp-sheen: rgba(255, 255, 255, 0.04); --cp-highlight: rgba(253, 142, 161, 0.12); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--cp-bg); color: var(--cp-text); font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif; }
+    main { max-width: 760px; margin: 0 auto; padding: 72px 24px; }
+    .mark { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 16px; background: var(--cp-text); color: var(--cp-bg); font-size: 24px; font-weight: 600; }
+    h1 { margin: 20px 0 8px; font-size: clamp(38px, 8vw, 64px); line-height: 1; }
+    .intro { max-width: 600px; color: var(--cp-text-muted); font-size: 20px; line-height: 1.55; }
+    nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    a { color: var(--cp-link); }
+    .button { display: inline-block; padding: 11px 16px; border: 1px solid var(--cp-border); border-radius: 0.625rem; background: var(--cp-surface); color: var(--cp-text); text-decoration: none; }
+    .button:hover { border-color: var(--cp-border-strong); }
+    section { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--cp-border); }
+    h2 { margin: 0 0 12px; font-size: 24px; }
+    p, li { line-height: 1.65; }
+    footer { margin-top: 64px; color: var(--cp-text-muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark" aria-hidden="true">P</div>
+    <h1>Perch</h1>
+    <p class="intro">A quiet clock, timer, Pomodoro, and sticky-note workspace for the Mac menu bar.</p>
+    <nav aria-label="Support links">
+      <a class="button" href="support.html">Support</a>
+      <a class="button" href="privacy.html">Privacy Policy</a>
+    </nav>
+    <section>
+      <h2>Built for the menu bar</h2>
+      <p>Keep a timer visible, run a focus session, or capture a note without opening another full-size app.</p>
+    </section>
+    <section>
+      <h2>Try every feature for 14 days</h2>
+      <p>Start the free trial when you are ready. It does not renew or charge automatically. Continue with one Lifetime Access purchase. There is no subscription.</p>
+    </section>
+    <footer>Perch for macOS. Copyright 2026 Rohit Jaiswal.</footer>
+  </main>
+</body>
+</html>

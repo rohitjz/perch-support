@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perch Support</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const theme = param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <style>
+    :root { color-scheme: light; --cp-bg: #f7f4ef; --cp-bg-elevated: #fcfbf8; --cp-surface: #ffffff; --cp-surface-soft: #f5f5f5; --cp-border: #dedede; --cp-border-strong: #919191; --cp-text: #242424; --cp-text-muted: #5c5c5c; --cp-text-soft: #6f6f6f; --cp-accent: #b11f4b; --cp-accent-hover: #9a1a41; --cp-accent-soft: rgba(177, 31, 75, 0.08); --cp-accent-fg: #ffffff; --cp-success: #16a34a; --cp-danger: #dc2626; --cp-warning: #f59e0b; --cp-link: #0078d4; --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12); --cp-overlay: rgba(255, 255, 255, 0.8); --cp-panel: rgba(255, 255, 255, 0.86); --cp-panel-strong: rgba(255, 255, 255, 0.96); --cp-sheen: rgba(255, 255, 255, 0.55); --cp-highlight: rgba(177, 31, 75, 0.12); }
+    html[data-theme="dark"] { color-scheme: dark; --cp-bg: #3d3b3a; --cp-bg-elevated: #343231; --cp-surface: #292929; --cp-surface-soft: #2e2e2e; --cp-border: #474747; --cp-border-strong: #5f5f5f; --cp-text: #dedede; --cp-text-muted: #919191; --cp-text-soft: #b0b0b0; --cp-accent: #fd8ea1; --cp-accent-hover: #fb7b91; --cp-accent-soft: rgba(253, 142, 161, 0.14); --cp-accent-fg: #1a1a1a; --cp-success: #4ade80; --cp-danger: #f87171; --cp-warning: #fbbf24; --cp-link: #4da6ff; --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32); --cp-overlay: rgba(41, 41, 41, 0.88); --cp-panel: rgba(41, 41, 41, 0.72); --cp-panel-strong: rgba(41, 41, 41, 0.96); --cp-sheen: rgba(255, 255, 255, 0.04); --cp-highlight: rgba(253, 142, 161, 0.12); }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--cp-bg); color: var(--cp-text); font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif; }
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
+    a { color: var(--cp-link); }
+    .back { display: inline-block; margin-bottom: 32px; }
+    h1 { font-size: clamp(34px, 7vw, 52px); margin: 0 0 12px; }
+    .intro { color: var(--cp-text-muted); font-size: 18px; }
+    details { margin-top: 16px; padding: 18px 20px; border: 1px solid var(--cp-border); border-radius: 0.625rem; background: var(--cp-surface); }
+    summary { cursor: pointer; font-weight: 600; }
+    p, li { line-height: 1.7; }
+    footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--cp-border); color: var(--cp-text-muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="index.html">Back to Perch</a>
+    <h1>Perch Support</h1>
+    <p class="intro">Common fixes and contact information for Perch on macOS.</p>
+    <details open><summary>Where is Perch after launch?</summary><p>Perch is a menu-bar app and has no Dock icon. Look for its timer icon in the macOS menu bar.</p></details>
+    <details><summary>Why did the timer notification not appear?</summary><p>Open System Settings, choose Notifications, select Perch, and allow notifications. The timer continues to work when notifications are disabled.</p></details>
+    <details><summary>Why are global shortcuts not responding?</summary><p>Open Perch Settings to confirm the shortcuts. If another app owns the same shortcut, quit that app or change its shortcut.</p></details>
+    <details><summary>Why are notes not syncing?</summary><p>Confirm that the same Apple ID is signed in to iCloud on each Mac and that iCloud Drive is enabled. Perch falls back to local notes when private CloudKit is unavailable.</p></details>
+    <details><summary>How do I remove a note?</summary><p>Open the note's More menu and choose Delete. Deletions sync through iCloud when cloud sync is active.</p></details>
+    <details><summary>Will the 14-day trial charge me?</summary><p>No. The trial starts only after you confirm the free App Store transaction. It does not renew, and Perch does not charge you automatically when it ends.</p></details>
+    <details><summary>What happens when the trial ends?</summary><p>Timers and note editing pause until you buy or restore Lifetime Access. Existing notes remain stored.</p></details>
+    <details><summary>How do I restore Lifetime Access?</summary><p>Open Perch Settings, choose Purchase, and select Restore Purchase. Use the same Apple ID that acquired Lifetime Access.</p></details>
+    <details><summary>Why is a purchase unavailable?</summary><p>Confirm that the Mac is online and signed in to the App Store, then open Settings > Purchase and choose Refresh App Store. A pending family or purchase approval must finish before Perch unlocks.</p></details>
+    <h2>Contact</h2>
+    <p>For support, <a href="https://github.com/rohitjz/perch-support/issues/new">open a support request</a>. Include your macOS version, Perch version, and the steps that reproduce the issue. Do not include private note content.</p>
+    <footer><a href="privacy.html">Privacy Policy</a></footer>
+  </main>
+</body>
+</html>
